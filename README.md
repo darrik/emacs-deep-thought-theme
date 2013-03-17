@@ -2,6 +2,6 @@
 
 An Emacs 24 theme with the Answer to The Ultimate Question of Life, the Universe, and Everything... well. ok, perhaps not ( crib-sheet : answer is 42 )
 
-# Screenshot 
+# Screenshot
 
-![](https://raw.github.com/jasonm23/emacs-deep-thought-theme/master/deep-thought-theme.png)
+![](https://raw.github.com/darrik/emacs-deep-thought-theme/master/deep-thought-theme.png)

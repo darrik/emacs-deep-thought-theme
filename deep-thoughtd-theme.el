@@ -1,8 +1,12 @@
-;;; deep-thought-theme.el --- Emacs 24 theme with the Answer to The Ultimate Question
+;;; deep-thoughtd-theme.el --- Emacs 24 theme with the Answer to The Ultimate Question
 ;;;
 ;;; Author: Jason Milkins <jasonm23@gmail.com>
 ;;; Url: https://github.com/jasonm23/emacs-deep-thought-theme
 ;;; Version: 0.0.6
+;;;
+;;; Modified by: Rikard Glans <rikard@ecx.se>
+;;; Url: https://github.com/darrik/emacs-deep-thought-theme
+;;; Time-stamp: <2013-03-17 20:07:25>
 ;;;
 ;;; This program is free software: you can redistribute it and/or modify
 ;;; it under the terms of the GNU General Public License as published by
@@ -20,24 +24,18 @@
 ;;; http://emacsfodder.github.com
 ;;;
 
-(deftheme deep-thought
+(deftheme deep-thoughtd
   "deep-thought-theme By: Jason Milkins - emacsfodder.github.com")
 
-(custom-theme-set-variables
- 'deep-thought
- '(fringe-mode 6 nil (fringe))
- '(linum-format " %7d ")
- )
-
 (custom-theme-set-faces
- 'deep-thought
+ 'deep-thoughtd
 
  '(default
    (
-    (((class color) (min-colors 16777216)) (:foreground "#fff" :background "#000F14"))
-    (((class color) (min-colors 88))       (:foreground "#fff" :background "#000"))
-    (((class color) (min-colors 16))       (:foreground "#fff" :background "#000"))
-    (((class color) (min-colors 8))        (:foreground "#fff" :background "#000")))
+    (((class color) (min-colors 16777216)) (:foreground "#f8f8f8" :background "#000F14"))
+    (((class color) (min-colors 88))       (:foreground "#fff"    :background "#000"))
+    (((class color) (min-colors 16))       (:foreground "#fff"    :background "#000"))
+    (((class color) (min-colors 8))        (:foreground "#fff"    :background "#000")))
    )
 
  '(fixed-pitch
@@ -59,7 +57,7 @@
 
  ;; Mode-line / status line
  '(mode-line
-   ((t (:background "#1b283d" :box nil :foreground "#3c86e4" :height 85))))
+   ((t (:background "#1b283d" :box nil :foreground "#3c86e4"))))
 
  '(mode-line-inactive
    ((t (:weight light :box nil :background "#102339" :foreground "#000000" :inherit (mode-line)))))
@@ -72,6 +70,16 @@
 
  '(mode-line-buffer-id
    ((t (:weight bold :box nil))))
+
+ ;; Powerline
+ '(powerline-active1
+   ((t (:background "#2b384d" :foreground "#3c86e4" :inherit mode-line))))
+ '(powerline-active2
+   ((t (:background "#3b485d" :foreground "#3c86e4" :inherit mode-line))))
+ '(powerline-inactive1
+   ((t (:background "#102339" :foreground "#000"    :inherit mode-line))))
+ '(powerline-inactive2
+   ((t (:background "#102339" :foreground "#000"    :inherit mode-line))))
 
  ;; Cursor
  '(cursor
@@ -86,7 +94,7 @@
 
  ;; Region
  '(region
-   ((t (:background "#0a101f"))))
+   ((t (:background "#0a202f"))))
 
  ;; show-paren-mode
  '(show-paren-match ((t (:foreground "#fff" :background "#256" ))))
@@ -122,7 +130,7 @@
  ;; Hightlight
  '(highlight
    ((((class color) (min-colors 88) (background light)) (:background "#103453"))
-    (((class color) (min-colors 88) (background dark)) (:background "#113450")) 
+    (((class color) (min-colors 88) (background dark)) (:background "#113450"))
     (((class color) (min-colors 16) (background light)) (:background "#103450"))
     (((class color) (min-colors 16) (background dark)) (:background "#104560"))
     (((class color) (min-colors 8)) (:foreground "#000000" :background "#1050a0")) (t (:inverse-video t))))
@@ -139,13 +147,13 @@
 
 
  '(link (
-         (((class color) (min-colors 88) (background light)) (:underline t :foreground "#1057f0")) 
-         (((class color) (background light)) (:underline t :foreground "#1044a0")) 
-         (((class color) (min-colors 88) (background dark))  (:underline t :foreground "#1069aa")) 
+         (((class color) (min-colors 88) (background light)) (:underline t :foreground "#1057f0"))
+         (((class color) (background light)) (:underline t :foreground "#1044a0"))
+         (((class color) (min-colors 88) (background dark))  (:underline t :foreground "#1069aa"))
          (((class color) (background dark))  (:underline t :foreground "#1069aa")) (t (:inherit (underline)))))
 
- '(link-visited ((default (:inherit (link))) 
-                 (((class color) (background light)) (:inherit (link))) 
+ '(link-visited ((default (:inherit (link)))
+                 (((class color) (background light)) (:inherit (link)))
                  (((class color) (background dark)) (:inherit (link)))))
 
  '(button ((t (:inherit (link)))))
@@ -172,7 +180,7 @@
  '(lazy-highlight
    ((((class color) (min-colors 88) (background light)) (:background "#1877dd"))
     (((class color) (min-colors 88) (background dark)) (:background "#1777dd"))
-    (((class color) (min-colors 16)) (:background "#144499")) 
+    (((class color) (min-colors 16)) (:background "#144499"))
     (((class color) (min-colors 8)) (:background "#155599")) (t (:underline t))))
 
  '(match
@@ -201,6 +209,6 @@
 
 (eval-after-load "rainbow-delimiters" '(deep-thought-rainbow-delim-set-face))
 
-(provide-theme 'deep-thought)
+(provide-theme 'deep-thoughtd)
 
-;;; deep-thought-theme.el ends here
+;;; deep-thoughtd-theme.el ends here
