@@ -6,7 +6,7 @@
 ;;;
 ;;; Modified by: Rikard Glans <rikard@ecx.se>
 ;;; Url: https://github.com/darrik/emacs-deep-thought-theme
-;;; Time-stamp: <2013-03-17 20:07:25>
+;;; Time-stamp: <2013-04-07 06:14:07>
 ;;;
 ;;; This program is free software: you can redistribute it and/or modify
 ;;; it under the terms of the GNU General Public License as published by
@@ -33,9 +33,9 @@
  '(default
    (
     (((class color) (min-colors 16777216)) (:foreground "#f8f8f8" :background "#000F14"))
-    (((class color) (min-colors 88))       (:foreground "#fff"    :background "#000"))
-    (((class color) (min-colors 16))       (:foreground "#fff"    :background "#000"))
-    (((class color) (min-colors 8))        (:foreground "#fff"    :background "#000")))
+    (((class color) (min-colors 88))       (:foreground "#f8f8f8"    :background "#000"))
+    (((class color) (min-colors 16))       (:foreground "#f8f8f8"    :background "#000"))
+    (((class color) (min-colors 8))        (:foreground "#f8f8f8"    :background "#000")))
    )
 
  '(fixed-pitch
@@ -45,7 +45,7 @@
    ((t (:family "Sans Serif"))))
 
  '(escape-glyph
-   ((t (:foreground "#FFF" :background "#111d3c"))))
+   ((t (:foreground "#F8F8F8" :background "#111d3c"))))
 
  ;; Line Numbers (linum-mode)
  '(linum
@@ -57,10 +57,10 @@
 
  ;; Mode-line / status line
  '(mode-line
-   ((t (:background "#1b283d" :box nil :foreground "#3c86e4"))))
+   ((t (:background "#001520" :box nil :foreground "#F8F8F8"))))
 
  '(mode-line-inactive
-   ((t (:weight light :box nil :background "#102339" :foreground "#000000" :inherit (mode-line)))))
+   ((t (:weight light :box nil :background "#001520" :foreground "#000000" :inherit (mode-line)))))
 
  '(mode-line-emphasis
    ((t (:weight bold))))
@@ -83,26 +83,26 @@
 
  ;; Cursor
  '(cursor
-   ((t (:foreground "#ffffff" :background "#3748A0"))))
+   ((t (:foreground "#f8f8f8" :background "#3748A0"))))
 
  ;; Minibuffer
  '(minibuffer-prompt
    ((t (:weight bold :foreground "#208ae2"))))
 
  '(minibuffer-message
-   ((t (:foreground "#ffffff"))))
+   ((t (:foreground "#f8f8f8"))))
 
  ;; Region
  '(region
-   ((t (:background "#0a202f"))))
+   ((t (:background "#102530"))))
 
  ;; show-paren-mode
- '(show-paren-match ((t (:foreground "#fff" :background "#256" ))))
- '(show-paren-mismatch ((t (:foreground "#fff" :background "#F80" ))))
+ '(show-paren-match ((t (:foreground "#f8f8f8" :background "#256" ))))
+ '(show-paren-mismatch ((t (:foreground "#f8f8f8" :background "#700" ))))
 
  ;; flymake
- '(flymake-errline ((t (:underline "#FF3100" :background nil :slant italic ))))
- '(flymake-warnline ((t (:underline "#443177" :background nil :slant italic ))))
+ '(flymake-errline ((t (:underline "#881100" :background nil :slant italic ))))
+ '(flymake-warnline ((t (:underline "#345197" :background nil :slant italic ))))
 
  ;; ---- add more mode customizations in due course.
 
@@ -161,8 +161,8 @@
  '(header-line ((default (:inherit (mode-line))) (((type tty)) (:underline t :inverse-video nil))
                 (((class color grayscale) (background light)) (:box nil :foreground "#222222" :background "#bbbbbb"))
                 (((class color grayscale) (background dark)) (:box nil :foreground "#bbbbbb" :background "#222222"))
-                (((class mono) (background light)) (:underline t :box nil :inverse-video nil :foreground "#000000" :background "#ffffff"))
-                (((class mono) (background dark)) (:underline t :box nil :inverse-video nil :foreground "#ffffff" :background "#000000"))))
+                (((class mono) (background light)) (:underline t :box nil :inverse-video nil :foreground "#000000" :background "#f8f8f8"))
+                (((class mono) (background dark)) (:underline t :box nil :inverse-video nil :foreground "#f8f8f8" :background "#000000"))))
 
  '(tooltip ((default nil) (nil nil)))
 
@@ -187,7 +187,7 @@
    ((((class color) (min-colors 88) (background light)) (:background "#1388cc"))
     (((class color) (min-colors 88) (background dark)) (:background "#1388cc"))
     (((class color) (min-colors 8) (background light)) (:foreground "#000000" :background "#139"))
-    (((class color) (min-colors 8) (background dark)) (:foreground "#ffffff" :background "#159")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "#888888"))))
+    (((class color) (min-colors 8) (background dark)) (:foreground "#f8f8f8" :background "#159")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "#888888"))))
 
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
@@ -209,6 +209,16 @@
 
 (eval-after-load "rainbow-delimiters" '(deep-thought-rainbow-delim-set-face))
 
+;; Add to custom-theme-load-path
+;;;###autoload
+(when (and (boundp 'custom-theme-load-path) load-file-name)
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
+
 (provide-theme 'deep-thoughtd)
+
+;; Local Variables:
+;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
+;; End:
 
 ;;; deep-thoughtd-theme.el ends here
